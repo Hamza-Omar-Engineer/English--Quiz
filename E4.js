@@ -7,316 +7,186 @@ let timer;
 let secondsElapsed = 0;
 
 // Placeholder Data (We will replace this with JSON later)
-const questions = [
-
-    // --- القسم الأول: القواعد (15 سؤالاً) ---
-    // الـ -ing form (8 أسئلة)
+    const questions = [
     {
-        question: "1. _____ includes lighting, shading, and reflections to make images realistic.",
-        options: ["Render", "Rendering", "Rendered", "To render"],
-        answer: "Rendering",
-        explanation: "هنا نستخدم الـ Gerund كمبتدأ للجملة (Subject)."
-    },
-    {
-        question: "2. Computers generate graphics by _____ mathematical calculations.",
-        options: ["perform", "performing", "performed", "to perform"],
-        answer: "performing",
-        explanation: "بعد حرف الجر (by) نستخدم دائماً صيغة الـ Gerund (-ing)."
-    },
-    {
-        question: "3. I enjoy _____ photos with professional filters.",
-        options: ["edit", "editing", "edits", "to edit"],
-        answer: "editing",
-        explanation: "الفعل (enjoy) يتبعه دائماً Gerund."
-    },
-    {
-        question: "4. Designers avoid _____ bitmaps when high scalability is needed.",
-        options: ["use", "using", "uses", "to use"],
-        answer: "using",
-        explanation: "الفعل (avoid) يتبعه دائماً Gerund."
-    },
-    {
-        question: "5. In the phrase 'a specialized printing device', 'printing' acts as an _____.",
-        options: ["Adjective", "Gerund", "Verb", "Object"],
-        answer: "Adjective",
-        explanation: "كلمة printing هنا تصف الاسم (device) فهي تعمل كصفة."
-    },
-    {
-        question: "6. She is _____ a new layout for the magazine.",
-        options: ["design", "designing", "designed", "designs"],
-        answer: "designing",
-        explanation: "هنا Present Participle لأنها جزء من زمن الحاضر المستمر."
-    },
-    {
-        question: "7. He is interested in _____ 3D wireframe models.",
-        options: ["create", "creating", "creates", "to create"],
-        answer: "creating",
-        explanation: "بعد حرف الجر (in) نستخدم Gerund."
-    },
-    {
-        question: "8. _____ information via multimedia kiosks is very effective.",
-        options: ["Provide", "Provided", "Providing", "Provides"],
-        answer: "Providing",
-        explanation: "استخدام Gerund كاسم في بداية الجملة."
-    },
-    // ترتيب الصفات (7 أسئلة)
-    {
-        question: "9. Choose the correct order: We bought a _____ imagesetter.",
-        options: ["new, expensive, digital", "expensive, new, digital", "digital, new, expensive", "expensive, digital, new"],
-        answer: "expensive, new, digital",
-        explanation: "الترتيب الصحيح: الرأي (expensive) -> العمر (new) -> النوع (digital)."
-    },
-    {
-        question: "10. He uses a _____ computer for DTP.",
-        options: ["powerful, modern, Apple", "Apple, powerful, modern", "modern, Apple, powerful", "powerful, Apple, modern"],
-        answer: "powerful, modern, Apple",
-        explanation: "الترتيب: الرأي (powerful) -> العمر (modern) -> المنشأ/الماركة (Apple)."
-    },
-    {
-        question: "11. It is a _____ layout program.",
-        options: ["user-friendly, new, page", "page, new, user-friendly", "new, user-friendly, page", "user-friendly, page, new"],
-        answer: "user-friendly, new, page",
-        explanation: "الترتيب: الرأي (user-friendly) -> العمر (new) -> الغرض (page)."
-    },
-    {
-        question: "12. Look at that _____ music system.",
-        options: ["Japanese, advanced, digital", "advanced, digital, Japanese", "advanced, Japanese, digital", "digital, advanced, Japanese"],
-        answer: "advanced, Japanese, digital",
-        explanation: "الترتيب: الرأي (advanced) -> المنشأ (Japanese) -> النوع (digital)."
-    },
-    {
-        question: "13. I need a _____ printer.",
-        options: ["portable, small, laser", "small, portable, laser", "laser, small, portable", "portable, laser, small"],
-        answer: "small, portable, laser",
-        explanation: "الترتيب: الحجم (small) -> الاستخدام (portable) -> النوع (laser)."
-    },
-    {
-        question: "14. They use _____ plates for printing.",
-        options: ["rectangular, metal, silver", "silver, metal, rectangular", "metal, rectangular, silver", "silver, rectangular, metal"],
-        answer: "rectangular, metal, silver",
-        explanation: "الترتيب: الشكل (rectangular) -> المادة (metal) -> اللون (silver)."
-    },
-    {
-        question: "15. It is a _____ multimedia encyclopedia.",
-        options: ["comprehensive, online, Britannica", "Britannica, online, comprehensive", "online, comprehensive, Britannica", "comprehensive, Britannica, online"],
-        answer: "comprehensive, online, Britannica",
-        explanation: "الترتيب: الرأي (comprehensive) -> المكان/النوع (online) -> الماركة (Britannica)."
-    },
-
-    // --- القسم الثاني: المفردات والتعاريف (15 سؤالاً) ---
-    {
-        question: "16. _____ are geometrical figures with special properties (like self-similarity).",
-        options: ["Bitmaps", "Fractals", "Filters", "Vectors"],
-        answer: "Fractals",
-        explanation: "الفركتلات هي أشكال هندسية ذات خصائص تكرارية خاصة."
-    },
-    {
-        question: "17. A _____ is a representation of a 3D object using only edges and contour lines.",
-        options: ["Rendering", "Wireframe", "Solid model", "Bitmap"],
-        answer: "Wireframe",
-        explanation: "الهيكل السلكي يظهر الحواف والخطوط الخارجية فقط."
-    },
-    {
-        question: "18. The number of pixels per inch in an image is called _____.",
-        options: ["Resolution", "Scaling", "Kerning", "Tracking"],
-        answer: "Resolution",
-        explanation: "الدقة (Resolution) هي عدد البكسلات في البوصة."
-    },
-    {
-        question: "19. Adjusting the space between two specific characters is known as _____.",
-        options: ["Leading", "Tracking", "Kerning", "Text flow"],
+        question: "1. Which term refers to the process of adjusting the space between characters?",
+        options: ["Text flow", "Kerning", "Font", "Platesetter"],
         answer: "Kerning",
-        explanation: "الـ Kerning هو ضبط المسافة بين زوج من الأحرف."
+        explanation: "Based on page 106 (Exercise , kerning is defined as \"the process of adjusting the space between characters.\""
     },
     {
-        question: "20. A _____ machine creates the metal plates used in commercial printing.",
-        options: ["Scanner", "Imagesetter", "Platesetter", "Synthesizer"],
+        question: "2. A machine that creates the printing plates is called a:",
+        options: ["Scanner", "Imagesetter", "Platesetter", "Laser printer"],
         answer: "Platesetter",
-        explanation: "الـ Platesetter هي الآلة التي تصنع صفائح الطباعة المعدنية."
+        explanation: "Page 105 states that the machine that generates plates for a printing press is called a \"platesetter.\""
     },
     {
-        question: "21. _____ is a technique that adds realism (lighting, shadows) to a 3D model.",
-        options: ["Compositing", "Rendering", "Scaling", "Filtering"],
-        answer: "Rendering",
-        explanation: "الصيرورة (Rendering) هي عملية إضفاء الواقعية على النموذج."
-    },
-    {
-        question: "22. Images made of pixels are called _____ graphics.",
-        options: ["Vector", "Raster (Bitmap)", "Fractal", "Wireframe"],
-        answer: "Raster (Bitmap)",
-        explanation: "الرسوم النقطية تتكون من بكسلات."
-    },
-    {
-        question: "23. Text that contains links to other documents is called _____.",
-        options: ["Hypermedia", "Hypertext", "Streaming", "Webcast"],
-        answer: "Hypertext",
-        explanation: "النص التشعبي يحتوي على روابط لفقرات أو وثائق أخرى."
-    },
-    {
-        question: "24. A(n) _____ allows you to record music and play it back on a PC.",
-        options: ["Imagesetter", "Sound card", "Video card", "Platesetter"],
-        answer: "Sound card",
-        explanation: "بطاقة الصوت هي المسؤولة عن التسجيل والمعالجة الصوتية."
-    },
-    {
-        question: "25. The standard interface for connecting electronic musical instruments is _____.",
-        options: ["USB", "DAW", "MIDI", "MP3"],
-        answer: "MIDI",
-        explanation: "MIDI هي الواجهة القياسية للآلات الموسيقية الإلكترونية."
-    },
-    {
-        question: "26. _____ means playing audio or video files while they are still downloading.",
-        options: ["Ripping", "Burning", "Streaming", "Buffering"],
-        answer: "Streaming",
-        explanation: "البث (Streaming) هو التشغيل أثناء التحميل."
-    },
-    {
-        question: "27. Digital Audio Workstation is abbreviated as _____.",
-        options: ["DAW", "DTP", "CAD", "MIDI"],
-        answer: "DAW",
-        explanation: "DAW هي اختصار لمحطة عمل الصوت الرقمي."
-    },
-    {
-        question: "28. A(n) _____ is a public computer that provides information via multimedia.",
-        options: ["Imagesetter", "Kiosk", "Synthesizer", "Workstation"],
-        answer: "Kiosk",
-        explanation: "الكشك (Kiosk) هو جهاز معلوماتي عام."
-    },
-    {
-        question: "29. Special effects that can be applied to pictures are called _____.",
-        options: ["Fractals", "Filters", "Bitmaps", "Scales"],
-        answer: "Filters",
-        explanation: "الفلاتر هي تأثيرات برمجية تضاف للصور."
-    },
-    {
-        question: "30. The feature that wraps text around a graphic is _____.",
-        options: ["Kerning", "Leading", "Text flow", "Tracking"],
+        question: "3. The ability to put text around graphic objects in a variety of ways is:",
+        options: ["Kerning", "Text flow", "Formatting", "Desktop publishing"],
         answer: "Text flow",
-        explanation: "انسياب النص (Text flow) هو التفاف النص حول الرسم."
-    },
-
-    // --- القسم الثالث: فهم النصوص والأفخاخ التقنية (10 أسئلة) ---
-    {
-        question: "31. [Trap] What happens to a bitmap image when you scale it up (enlarge it)?",
-        options: ["It becomes clearer", "It shows jagged edges", "It turns into a vector", "Nothing changes"],
-        answer: "It shows jagged edges",
-        explanation: "الصور النقطية تفقد دقتها وتظهر حوافها مسننة عند التكبير."
+        explanation: "Page 105 defines \"text flow\" as the feature that allows you to wrap text around images or graphic objects."
     },
     {
-        question: "32. [Trap] Vector graphics are better for logos because they _____.",
-        options: ["Use more pixels", "Are made of mathematical equations", "Are always smaller", "Can't be scaled"],
-        answer: "Are made of mathematical equations",
-        explanation: "الـ Vector يعتمد على معادلات رياضية مما يجعله قابلاً للتكبير دون فقدان الدقة."
+        question: "4. What are \"raster graphics\" also commonly called?",
+        options: ["Vectors", "Fractals", "Bitmaps", "Wireframes"],
+        answer: "Bitmaps",
+        explanation: "Page 101 explicitly states that \"Raster graphics, or bitmaps, are stored as a collection of pixels.\""
     },
     {
-        question: "33. Which format is commonly used to exchange vector drawings?",
-        options: ["JPEG", "GIF", "EPS", "TIFF"],
-        answer: "EPS",
-        explanation: "حسب النص، EPS هو التنسيق القياسي لتبادل الرسوم المتجهة."
+        question: "5. What does the acronym \"MIDI\" stand for?",
+        options: ["Multimedia Interface Digital Instrument", "Musical Instrument Digital Interface", "Musical Instruction Data Information", "Multimedia Interactive Digital Interface"],
+        answer: "Musical Instrument Digital Interface",
+        explanation: "Page 111 identifies MIDI as the \"Musical Instrument Digital Interface.\""
     },
     {
-        question: "34. DTP stands for _____.",
-        options: ["Digital Text Printing", "Desktop Publishing", "Data Transfer Protocol", "Design Technology Program"],
-        answer: "Desktop Publishing",
-        explanation: "DTP تعني النشر المكتبي."
+        question: "6. Which software is used to develop, model, and test car designs?",
+        options: ["DTP", "GIS", "CAD", "DAW"],
+        answer: "CAD",
+        explanation: "Page 101 mentions that \"Mechanical engineers use CAD (Computer Aided Design) software to develop, model and test car designs.\""
     },
     {
-        question: "35. Why is PDF popular for DTP?",
-        options: ["It only works on Macs", "It keeps the layout and fonts the same on any PC", "It is used for recording music", "It is a vector format only"],
-        answer: "It keeps the layout and fonts the same on any PC",
-        explanation: "الـ PDF يحافظ على التنسيق والخطوط بغض النظر عن نظام التشغيل."
+        question: "7. A live event broadcast over the Internet is a:",
+        options: ["Podcast", "Webcast", "Stream", "Hypertext"],
+        answer: "Webcast",
+        explanation: "Page 111 defines a \"webcast\" as the broadcast of an event over the Web."
     },
     {
-        question: "36. Modern commercial printing uses CTP, which sends files directly to the _____.",
-        options: ["Laser printer", "Metal plates", "Service bureau", "Scanner"],
-        answer: "Metal plates",
-        explanation: "تقنية Computer-To-Plate ترسل الملفات مباشرة لصفائح الطباعة."
+        question: "8. The \"sharpness\" of an image, which depends on pixel density, is called:",
+        options: ["Dimension", "Contrast", "Resolution", "Saturation"],
+        answer: "Resolution",
+        explanation: "Page 101 defines \"resolution\" as the sharpness of an image depending on the density of pixels."
     },
     {
-        question: "37. Multimedia 'interactivity' means _____.",
-        options: ["Watching a video without moving", "The user is involved and makes choices", "The computer is very fast", "Printing a colorful book"],
-        answer: "The user is involved and makes choices",
-        explanation: "التفاعلية تعني مشاركة المستخدم واتخاذ القرارات."
+        question: "9. Which is the correct order for a software description?",
+        options: ["A desktop publishing user-friendly software", "A user-friendly desktop publishing software", "A software user-friendly desktop publishing", "A user-friendly software desktop publishing"],
+        answer: "A user-friendly desktop publishing software",
+        explanation: "According to page 106, Opinion (user-friendly) comes before Purpose (desktop publishing)."
     },
     {
-        question: "38. Encyclopedia Britannica is now available _____.",
-        options: ["Only in print", "Online and on DVD", "Only on the radio", "Only as a Word file"],
-        answer: "Online and on DVD",
-        explanation: "ذكر النص أن الموسوعة انتقلت للنسخ الرقمية."
+        question: "10. Choose the correct arrangement:",
+        options: ["A German graphic design industry", "A graphic design German industry", "A German industry graphic design", "An industry German graphic design"],
+        answer: "A German graphic design industry",
+        explanation: "Following the table on page 106, Origin/Place (German) must precede the Headword/Purpose (graphic design industry)."
+    },
+    {
+        question: "11. Which sentence follows the correct adjective order?",
+        options: ["A portable new Sony music player", "A Sony new portable music player", "A new Sony portable music player", "A portable Sony new music player"],
+        answer: "A portable new Sony music player",
+        explanation: "According to the student's handwritten notes and the table on page 106, the order is: Description (portable) + Age (new) + Origin (Sony)."
         },
     {
-        question: "39. A 'CD ripper' program is used to _____.",
-        options: ["Destroy a CD", "Extract music and save it as MP3", "Burn music onto a CD", "Design a CD cover"],
-        answer: "Extract music and save it as MP3",
-        explanation: "برنامج الـ Ripper يستخرج الموسيقى ويحولها لتنسيق رقمي."
+        question: "12. \"Brand names\" (like Microsoft or Sony) are categorized as adjectives of:",
+        options: [" Opinion", " Material", " Origin/Place", " Purpose"],
+        answer: " Origin/Place",
+        explanation: "The \"Help box\" on page 106 states: \"Brand names (Microsoft, Sony, etc.) are considered adjectives of origin/place.\""
     },
     {
-        question: "40. Car designers use CAD to _____.",
-        options: ["Listen to music", "Model and test designs before building them", "Send emails", "Calculate taxes"],
-        answer: "Model and test designs before building them",
-        explanation: "يستخدم CAD لاختبار التصاميم افتراضياً قبل التصنيع."
-    },
-
-    // --- القسم الرابع: الترجمة والمصطلحات (10 أسئلة بناءً على خط اليد) ---
-    {
-        question: "41. الترجمة الصحيحة لكلمة 'Jagged' هي _____.",
-        options: ["ناعم", "مشوه / مسنن", "مستقيم", "دائري"],
-        answer: "مشوه / مسنن",
-        explanation: "وردت في الملاحظات المكتوبة لوصف حواف البكسلات."
+        question: "13. In \"PCs generate graphics by performing calculations,\" the word \"performing\" is:",
+        options: [" A present participle (part of a continuous tense)", " A gerund (acting as a noun after a preposition)", " An adjective", " A main verb"],
+        answer: " A gerund (acting as a noun after a preposition)",
+        explanation: "Page 102 explains that we use gerunds after prepositions (by)."
     },
     {
-        question: "42. ماذا يعني مصطلح 'Desktop Publishing' باللغة العربية؟",
-        options: ["برمجة المكتب", "النشر المكتبي", "إدارة الملفات", "تصنيع الحواسيب"],
-        answer: "النشر المكتبي",
-        explanation: "الترجمة الرسمية للـ DTP."
+        question: "14. In the phrase \"an amazing fractal,\" the word \"amazing\" is:",
+        options: [" A gerund", " An adjective", " A main verb", " A preposition"],
+        answer: " An adjective",
+        explanation: "The \"Help box\" on page 102 lists \"amazing\" as an example of an -ing form used as an adjective."
     },
     {
-        question: "43. كلمة 'Rendering' في سياق التصميم تعني _____.",
-        options: ["المسح الضوئي", "الإظهار المعماري / الصيرورة", "تغيير الخط", "إرسال الملف"],
-        answer: "الإظهار المعماري / الصيرورة",
-        explanation: "هي عملية المعالجة النهائية للصورة."
+        question: "15. In \"Designing is a present participle,\" the word \"Designing\" is:",
+        options: [" An adjective", " A gerund acting as a subject", " A verb in the past tense", " A preposition"],
+        answer: " A gerund acting as a subject",
+        explanation: "Page 102 (Help Box) notes that -ing forms can act as the subject of a sentence, which is a gerund."
     },
     {
-        question: "44. ترجمة 'Wireframe' هي _____.",
-        options: ["إطار الصور", "هيكل سلكي", "سلك كهربائي", "برواز خشبي"],
-        answer: "هيكل سلكي",
-        explanation: "التمثيل الأولي للجسم الثلاثي الأبعاد."
+        question: "16. If you _ your digital video camera, we can make a movie.",
+        options: [" brought", " bring", " will bring", " brings"],
+        answer: " bring",
+        explanation: "This is a First Conditional (real/possible situation). Page 112 states the \"if\" clause uses the Present Simple."
     },
     {
-        question: "45. ماذا تعني 'Multimedia Kiosks'؟",
-        options: ["مكتبات رقمية", "أكشاك الوسائط المتعددة", "سماعات الرأس", "أفلام سينما"],
-        answer: "أكشاك الوسائط المتعددة",
-        explanation: "محطات معلوماتية عامة."
+        question: "17. If I could afford it, I _ a new game console.",
+        options: [" will buy", " would buy", " buy", " bought"],
+        answer: " would buy",
+        explanation: "This is a Second Conditional (hypothetical). Page 112 states the main clause uses \"would + verb.\""
     },
     {
-        question: "46. ترجمة 'Text flow' هي _____.",
-        options: ["حجم النص", "انسياب أو تدفق النص", "لون النص", "نوع الخط"],
-        answer: "انسياب أو تدفق النص",
-        explanation: "حسب الملاحظات، تعني التفاف النص حول الأجسام."
+        question: "18. You won't be able to play those files if you _ the correct plug-in.",
+        options: [" don't have", " didn't have", " won't have", " doesn't have"],
+        answer: " don't have",
+        explanation: "Page 112 (Exercise  requires the Present Simple negative for the \"if\" clause in a real/possible situation."
     },
     {
-        question: "47. مصطلح 'Hypermedia' يعني _____.",
-        options: ["نص تشعبي", "وسائط فائقة", "صورة ثابتة", "تسجيل صوتي"],
-        answer: "وسائط فائقة",
-        explanation: "النسخة التفاعلية من الوسائط المتعددة."
+        question: "19. \"Unless\" in conditional sentences means:",
+        options: [" As long as", " If not", " Because", " Only if"],
+        answer: " If not",
+        explanation: "The \"Help box\" on page 112 explicitly states: \"Unless means if not.\""
     },
     {
-        question: "48. 'Imagesetter' تترجم إلى _____.",
-        options: ["ماسح ضوئي", "راسمة الصور (عالية الدقة)", "طابعة ليزر عادية", "شاشة عرض"],
-        answer: "راسمة الصور (عالية الدقة)",
-        explanation: "جهاز يستخدم في المطابع لإنتاج الأفلام أو الصور بدقة عالية."
+        question: "20. What is a \"service bureau\"?",
+        options: [" A shop that sells cameras", " A company that specializes in printing other people's files", " A website for downloading music", " A government department"],
+        answer: " A company that specializes in printing other people's files",
+        explanation: "Page 105 defines it as a company specializing in printing services for others."
     },
     {
-        question: "49. ترجمة 'Solid modeling' هي _____.",
-        options: ["النمذجة الصلبة", "التلوين اليدوي", "تصميم الورق", "تحرير الصوت"],
-        answer: "النمذجة الصلبة",
-        explanation: "تقنية تصميم الأجسام ذات الحجم (Volume)."
+        question: "21. Which program is needed to view a PDF document?",
+        options: [" Adobe InDesign", " Adobe Acrobat Reader", " QuarkXPress", " Microsoft PowerPoint"],
+        answer: " Adobe Acrobat Reader",
+        explanation: "Page 105 states: \"To open a PDF file, only the Adobe Acrobat Reader (a free downloa is required.\""
     },
     {
-        question: "50. 'Digital Audio Workstation' تعني _____.",
-        options: ["برنامج رسم", "محطة عمل الصوت الرقمي", "لوحة مفاتيح", "مكبر صوت"],
-        answer: "محطة عمل الصوت الرقمي",
-        explanation: "النظام المتكامل لتسجيل وتحرير الموسيقى."
+        question: "22. \"Rendering\" in computer graphics includes:",
+        options: [" Typing text", " Lighting, shading, and shadows", " Connecting to the Internet", " Buying a new monitor"],
+        answer: " Lighting, shading, and shadows",
+        explanation: "Page 101 mentions that rendering includes \"lighting and shading as well as effects that simulate shadows and reflections.\""
+    },
+    {
+        question: "23. What are \"Fractals\"?",
+        options: [" Mathematical errors", " Geometrical patterns repeated at small scales", " Names of printing plates", " Hardware components"],
+        answer: " Geometrical patterns repeated at small scales",
+        explanation: "Page 101 defines fractals as \"geometrical patterns that are repeated at small scales to generate irregular shapes.\""
+    },
+    {
+        question: "24. A \"CD ripper\" is a program that:",
+        options: [" Breaks a CD into pieces", " Extracts music tracks and saves them as MP3s", " Plays videos on the web", " Creates 3D models"],
+        answer: " Extracts music tracks and saves them as MP3s",
+        explanation: "Page 111 defines a CD ripper as a program that extracts music tracks from CDs."
+    },
+    {
+        question: "25. The Arabic translation for \"Text Flow\" as written in the notes is:",
+        options: [" معالجة الكلمات", " انسياب النص", " تباعد الحروف", " الخط"],
+        answer: " انسياب النص",
+        explanation: "The handwritten notes on page 105/106 translate \"Text flow\" to \"انسياب النص\"."
+    },
+    {
+        question: "26. The term \"صفائح الطباعة\" refers to:",
+        options: [" Printing plates", " Platesetter", " Desktop publishing", " Word processing"],
+        answer: " Printing plates",
+        explanation: "Page 106 (Exercise D, item 4) shows \"printing plates\" translated/glossed as \"صفائح الطباعة\"."
+    },
+    {
+        question: "27. The Arabic note for \"User-friendly\" (page 106) is:",
+        options: [" قديم", " سهل الاستخدام", " حديث", " معقد"],
+        answer: " سهل الاستخدام",
+        explanation: "The handwritten notes on page 106 translate \"user-friendly\" to \"سهل الاستخدام\"."
+    },
+    {
+        question: "28. \"Hardware company\" was translated in the notes as:",
+        options: [" شركة برمجيات", " شركة معدات (هاردوير)", " شركة اتصالات", " شركة تصميم"],
+        answer: " شركة معدات (هاردوير)",
+        explanation: "The handwritten note on page 106 translates \"hardware\" to \"معدات\"."
+    },
+    {
+        question: "29. The term \"Output\" in the context of DTP (page 105) translates to:",
+        options: [" مدخلات", " مخرجات", " معالجة", " تخزين"],
+        answer: " مخرجات",
+        explanation: "In technical computing context (Unit 21), \"output\" refers to \"مخرجات\"."
+    },
+    {
+        question: "30. The word \"Portable\" in \"Portable Document Format\" (PDF) means:",
+        options: [" ثابت", " محمول / سهل النقل", " غالي الثمن", " معقد"],
+        answer: " محمول / سهل النقل",
+        explanation: "Page 105 and handwritten notes indicate \"portable\" refers to \"محمول\" or \"خفيف\" (easy to move/transfer between systems)."
     }
 ];
    
@@ -370,13 +240,17 @@ document.getElementById("start-btn").addEventListener("click", () => {
     // (أكمل باقي الدوال switchSection, showQuestion, checkAnswer من الكود السابق هنا)
 
 function switchSection(oldId, newId) {
-    document.getElementById(oldId).classList.remove("active");
+    const oldElem = document.getElementById(oldId);
+    const newElem = document.getElementById(newId);
+    
+    oldElem.classList.remove("active");
     setTimeout(() => {
-        document.getElementById(oldId).style.display = "none";
-        document.getElementById(newId).style.display = "block";
-        setTimeout(() => document.getElementById(newId).classList.add("active"), 10);
+        oldElem.style.display = "none";
+        newElem.style.display = "block";
+        setTimeout(() => newElem.classList.add("active"), 10);
     }, 400);
 }
+
 
 // --- Quiz Logic ---
 function showQuestion() {
@@ -456,7 +330,7 @@ function showResults() {
         msg =` Keep practicing, ${studentName}! You need to study harder.`;
     }
     
-    // Arabic-friendly grammar check for English (Gender context if needed)
+    // Arabic-friendly grammar check for English (Gender context if neede
     document.getElementById("result-message").innerText = msg;
 
     function sendDataToSheet(name, score, gender, time) {
@@ -466,7 +340,7 @@ function showResults() {
         name: name,
         score: score + "%",
         gender: gender,
-        time: time
+        time: time,
     };
 
     fetch(scriptURL, {
