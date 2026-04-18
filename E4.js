@@ -76,116 +76,116 @@ let secondsElapsed = 0;
         },
     {
         question: "12. \"Brand names\" (like Microsoft or Sony) are categorized as adjectives of:",
-        options: [" Opinion", " Material", " Origin/Place", " Purpose"],
-        answer: " Origin/Place",
+        options: ["Opinion", "Material", "Origin/Place", "Purpose"],
+        answer: "Origin/Place",
         explanation: "The \"Help box\" on page 106 states: \"Brand names (Microsoft, Sony, etc.) are considered adjectives of origin/place.\""
     },
     {
         question: "13. In \"PCs generate graphics by performing calculations,\" the word \"performing\" is:",
-        options: [" A present participle (part of a continuous tense)", " A gerund (acting as a noun after a preposition)", " An adjective", " A main verb"],
-        answer: " A gerund (acting as a noun after a preposition)",
+        options: ["A present participle (part of a continuous tense)", "A gerund (acting as a noun after a preposition)", "An adjective", "A main verb"],
+        answer: "A gerund (acting as a noun after a preposition)",
         explanation: "Page 102 explains that we use gerunds after prepositions (by)."
     },
     {
         question: "14. In the phrase \"an amazing fractal,\" the word \"amazing\" is:",
-        options: [" A gerund", " An adjective", " A main verb", " A preposition"],
-        answer: " An adjective",
+        options: ["A gerund", "An adjective", "A main verb", "A preposition"],
+        answer: "An adjective",
         explanation: "The \"Help box\" on page 102 lists \"amazing\" as an example of an -ing form used as an adjective."
     },
     {
         question: "15. In \"Designing is a present participle,\" the word \"Designing\" is:",
-        options: [" An adjective", " A gerund acting as a subject", " A verb in the past tense", " A preposition"],
-        answer: " A gerund acting as a subject",
+        options: ["An adjective", "A gerund acting as a subject", "A verb in the past tense", "A preposition"],
+        answer: "A gerund acting as a subject",
         explanation: "Page 102 (Help Box) notes that -ing forms can act as the subject of a sentence, which is a gerund."
     },
     {
         question: "16. If you _ your digital video camera, we can make a movie.",
-        options: [" brought", " bring", " will bring", " brings"],
-        answer: " bring",
+        options: ["brought", "bring", "will bring", "brings"],
+        answer: "bring",
         explanation: "This is a First Conditional (real/possible situation). Page 112 states the \"if\" clause uses the Present Simple."
     },
     {
         question: "17. If I could afford it, I _ a new game console.",
-        options: [" will buy", " would buy", " buy", " bought"],
-        answer: " would buy",
+        options: ["will buy", "would buy", "buy", "bought"],
+        answer: "would buy",
         explanation: "This is a Second Conditional (hypothetical). Page 112 states the main clause uses \"would + verb.\""
     },
     {
         question: "18. You won't be able to play those files if you _ the correct plug-in.",
-        options: [" don't have", " didn't have", " won't have", " doesn't have"],
-        answer: " don't have",
+        options: ["don't have", "didn't have", "won't have", "doesn't have"],
+        answer: "don't have",
         explanation: "Page 112 (Exercise  requires the Present Simple negative for the \"if\" clause in a real/possible situation."
     },
     {
         question: "19. \"Unless\" in conditional sentences means:",
-        options: [" As long as", " If not", " Because", " Only if"],
-        answer: " If not",
+        options: ["As long as", "If not", "Because", "Only if"],
+        answer: "If not",
         explanation: "The \"Help box\" on page 112 explicitly states: \"Unless means if not.\""
     },
     {
         question: "20. What is a \"service bureau\"?",
-        options: [" A shop that sells cameras", " A company that specializes in printing other people's files", " A website for downloading music", " A government department"],
-        answer: " A company that specializes in printing other people's files",
+        options: ["A shop that sells cameras", "A company that specializes in printing other people's files", "A website for downloading music", "A government department"],
+        answer: "A company that specializes in printing other people's files",
         explanation: "Page 105 defines it as a company specializing in printing services for others."
     },
     {
         question: "21. Which program is needed to view a PDF document?",
-        options: [" Adobe InDesign", " Adobe Acrobat Reader", " QuarkXPress", " Microsoft PowerPoint"],
-        answer: " Adobe Acrobat Reader",
+        options: ["Adobe InDesign", "Adobe Acrobat Reader", "QuarkXPress", "Microsoft PowerPoint"],
+        answer: "Adobe Acrobat Reader",
         explanation: "Page 105 states: \"To open a PDF file, only the Adobe Acrobat Reader (a free downloa is required.\""
     },
     {
         question: "22. \"Rendering\" in computer graphics includes:",
-        options: [" Typing text", " Lighting, shading, and shadows", " Connecting to the Internet", " Buying a new monitor"],
-        answer: " Lighting, shading, and shadows",
+        options: ["Typing text", "Lighting, shading, and shadows", "Connecting to the Internet", "Buying a new monitor"],
+        answer: "Lighting, shading, and shadows",
         explanation: "Page 101 mentions that rendering includes \"lighting and shading as well as effects that simulate shadows and reflections.\""
     },
     {
         question: "23. What are \"Fractals\"?",
-        options: [" Mathematical errors", " Geometrical patterns repeated at small scales", " Names of printing plates", " Hardware components"],
-        answer: " Geometrical patterns repeated at small scales",
+        options: ["Mathematical errors", "Geometrical patterns repeated at small scales", "Names of printing plates", "Hardware components"],
+        answer: "Geometrical patterns repeated at small scales",
         explanation: "Page 101 defines fractals as \"geometrical patterns that are repeated at small scales to generate irregular shapes.\""
     },
     {
         question: "24. A \"CD ripper\" is a program that:",
-        options: [" Breaks a CD into pieces", " Extracts music tracks and saves them as MP3s", " Plays videos on the web", " Creates 3D models"],
-        answer: " Extracts music tracks and saves them as MP3s",
+        options: ["Breaks a CD into pieces", "Extracts music tracks and saves them as MP3s", "Plays videos on the web", "Creates 3D models"],
+        answer: "Extracts music tracks and saves them as MP3s",
         explanation: "Page 111 defines a CD ripper as a program that extracts music tracks from CDs."
     },
     {
         question: "25. The Arabic translation for \"Text Flow\" as written in the notes is:",
-        options: [" معالجة الكلمات", " انسياب النص", " تباعد الحروف", " الخط"],
-        answer: " انسياب النص",
+        options: ["معالجة الكلمات", "انسياب النص", "تباعد الحروف", "الخط"],
+        answer: "انسياب النص",
         explanation: "The handwritten notes on page 105/106 translate \"Text flow\" to \"انسياب النص\"."
     },
     {
         question: "26. The term \"صفائح الطباعة\" refers to:",
-        options: [" Printing plates", " Platesetter", " Desktop publishing", " Word processing"],
-        answer: " Printing plates",
+        options: ["Printing plates", "Platesetter", "Desktop publishing", "Word processing"],
+        answer: "Printing plates",
         explanation: "Page 106 (Exercise D, item 4) shows \"printing plates\" translated/glossed as \"صفائح الطباعة\"."
     },
     {
         question: "27. The Arabic note for \"User-friendly\" (page 106) is:",
-        options: [" قديم", " سهل الاستخدام", " حديث", " معقد"],
-        answer: " سهل الاستخدام",
+        options: ["قديم", "سهل الاستخدام", "حديث", "معقد"],
+        answer: "سهل الاستخدام",
         explanation: "The handwritten notes on page 106 translate \"user-friendly\" to \"سهل الاستخدام\"."
     },
     {
         question: "28. \"Hardware company\" was translated in the notes as:",
-        options: [" شركة برمجيات", " شركة معدات (هاردوير)", " شركة اتصالات", " شركة تصميم"],
-        answer: " شركة معدات (هاردوير)",
+        options: ["شركة برمجيات", "شركة معدات (هاردوير)", "شركة اتصالات", "شركة تصميم"],
+        answer: "شركة معدات (هاردوير)",
         explanation: "The handwritten note on page 106 translates \"hardware\" to \"معدات\"."
     },
     {
         question: "29. The term \"Output\" in the context of DTP (page 105) translates to:",
-        options: [" مدخلات", " مخرجات", " معالجة", " تخزين"],
-        answer: " مخرجات",
+        options: ["مدخلات", "مخرجات", "معالجة", "تخزين"],
+        answer: "مخرجات",
         explanation: "In technical computing context (Unit 21), \"output\" refers to \"مخرجات\"."
     },
     {
         question: "30. The word \"Portable\" in \"Portable Document Format\" (PDF) means:",
-        options: [" ثابت", " محمول / سهل النقل", " غالي الثمن", " معقد"],
-        answer: " محمول / سهل النقل",
+        options: ["ثابت", "محمول / سهل النقل", "غالي الثمن", "معقد"],
+        answer: "محمول / سهل النقل",
         explanation: "Page 105 and handwritten notes indicate \"portable\" refers to \"محمول\" or \"خفيف\" (easy to move/transfer between systems)."
     }
 ];
