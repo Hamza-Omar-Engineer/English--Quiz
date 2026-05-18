@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>English Mastery Quiz</title>
+    <link rel="stylesheet" href="E4.css" />
+  </head>
+  <body class="male-theme">
+    <div class="marble-overlay"></div>
+
+    <section id="landing-page" class="active">
+      <div class="eyes-container">
+        <div class="eye"><div class="pupil"></div></div>
+        <div class="eye"><div class="pupil"></div></div>
+      </div>
+
+      <div class="glass-card">
+        <h1>Welcome to English Quiz</h1>
+        <p>Please enter your details to start</p>
+
+        <input
+          type="text"
+          id="student-name"
+          placeholder="Enter Your Full Name (English Or Arabic)..."
+          autocomplete="off"
+        />
+
+        <div class="gender-selection">
+          <button type="button" class="gender-btn active" data-gender="male">
+            Male
+          </button>
+          <button type="button" class="gender-btn" data-gender="female">
+            Female
+          </button>
+        </div>
+
+        <button id="start-btn" class="main-btn">START QUIZ</button>
+      </div>
+    </section>
+
+    <section id="quiz-page">
+      <div class="quiz-header">
+        <span id="question-number">Question 1/10</span>
+        <div id="timer">Time: 00:00</div>
+      </div>
+
+      <div class="question-card">
+        <h2 id="question-text">Loading question...</h2>
+        <div id="options-container" class="options-grid"></div>
+        <div id="explanation-container" class="explanation-box">
+          <strong>Explanation:</strong> <span id="explanation-text"></span>
+        </div>
+        <button id="next-btn" class="main-btn" style="display: none">
+          Next Question
+        </button>
+      </div>
+    </section>
+
+    <section id="result-page">
+      <div class="result-plaque">
+        <div class="plaque-inner">
+          <h2 id="congrats-title">CONGRATULATIONS</h2>
+          <div id="display-name" class="fakhama-text">STUDENT NAME</div>
+          <p id="result-message">You have achieved an Excellent level!</p>
+          <div class="score-circle">
+            <span id="final-score">90%</span>
+          </div>
+          <button onclick="location.reload()" class="main-btn">
+            Try Again
+          </button>
+        </div>
+      </div>
+      <p class="developer-credit">
+        Mastery System v4.0 | Engineered by Hamza Omar
+      </p>
+    </section>
+
+    <script src="E4.js"></script>
+  </body>
+</html>

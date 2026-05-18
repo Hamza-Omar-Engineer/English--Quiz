@@ -8,186 +8,339 @@ let secondsElapsed = 0;
 
 // Placeholder Data (We will replace this with JSON later)
     const questions = [
-    {
-        question: "1. Which term refers to the process of adjusting the space between characters?",
-        options: ["Text flow", "Kerning", "Font", "Platesetter"],
-        answer: "Kerning",
-        explanation: "Based on page 106 (Exercise , kerning is defined as \"the process of adjusting the space between characters.\""
+  
+  {
+    question: "Who developed the Java programming language based on the provided texts?",
+    options: [
+      "Microsoft",
+      "IBM",
+      "Sun Microsystems",
+      "AT&T"
+    ],
+    answer: "Sun Microsystems",
+    explanation: "بناءً على نص الصفحة الثالثة (Image 3) والصفحة الرابعة (Image 4)، فإن لغة الجافا تم تطويرها بواسطة شركة Sun Microsystems في عام 1995."
+  },
+  {
+   question: "What extension does a Java source code file have before it is compiled?",
+   options: [
+      ".class",
+      ".java",
+      ".txt",
+      ".swf"
+    ],
+    answer: ".java",
+    explanation: "وفقاً للفقرة الثانية في الصفحة الثالثة (Image 3)، فإن السورس كود الخاص بالجافا يحمل اللاحقة (.java extension)."
+  },
+  {
+   question: "What is the intermediate format called that Java source code is compiled into?",
+   options: [
+      "Machine code",
+      "Bytecode",
+      "Applet",
+      "Object code"
+    ],
+    answer: "Bytecode",
+    explanation: "تذكر الصفحة الثالثة (Image 3) أن الكود المصدري يُترجم (compiled) إلى صيغة وسيطة تسمى بت كود (bytecode) وتحمل اللاحقة .class."
+  },
+  {
+   question: "What component executes the compiled Java bytecode on a target operating system?",
+   options: [
+      "Java Compiler",
+      "Java Interpreter (Java Virtual Machine)",
+      "Assembler",
+      "Web Editor"
+    ],
+    answer: "Java Interpreter (Java Virtual Machine)",
+    explanation: "الـ Bytecode يتم تنفيذه ومحاكاته بواسطة مفسر الجافا المعروف باسم آلة جافا الافتراضية (Java Virtual Machines - JVM) لتشغيله على الأنظمة المختلفة."
+  },
+  {
+   question: "What does the term 'multi-threaded' mean in the context of the Java language?",
+   options: [
+      "The program can run only on one operating system.",
+      "The language can only be used for web pages.",
+      "A Java program can have multiple parts executing independently and continuously.",
+      "The language uses pre-defined HTML tags."
+    ],
+    answer: "A Java program can have multiple parts executing independently and continuously.",
+    explanation: "كما ورد في الصفحة الثالثة، 'multi-threaded, meaning a Java program can have multiple threads (parts) - that is, many different things processing independently and continuously'."
+  },
+  {
+   question: "Which Java platform is specifically designed and widely used for mobile devices?",
+   options: [
+      "Java SE",
+      "Java EE",
+      "Java ME (Java Micro Edition)",
+      "Java Script"
+    ],
+    answer: "Java ME (Java Micro Edition)",
+    explanation: "تذكر الصفحة الأولى والثالثة أن منصة Java Micro Edition (Java ME) تُستخدم على نطاق واسع في الأجهزة المحمولة والهواتف لتشغيل الألعاب والتطبيقات."
+  },
+  {
+   question: "Microsoft's C# language is described as a alternative to Java. How is it pronounced?",
+   options: [
+      "C hash",
+      "C sharp",
+      "C number",
+      "C plus"
+    ],
+    answer: "C sharp",
+    explanation: "جاء في الصفحة الأولى والثالثة أن لغة سي شارب التابعة لمايكروسوفت تُلفظ وتُنطق 'C sharp'."
+  },
+  {
+   question: "What is the name of the scripting language used by Adobe Flash technology to support graphics and streaming?",
+   options: [
+      "JavaScript",
+      "ActionScript",
+      "VBScript",
+      "VoiceXML"
+    ],
+    answer: "ActionScript",
+    explanation: "حسب نص البدائل المتاحة للجافا في الصفحة الثالثة، فإن تقنية Adobe Flash تعتمد على لغة برمجية نصية (scripting language) تُسمى ActionScript."
+  },
+  {
+   question: "Which computer language was developed by IBM in 1954 for scientific and engineering applications?",
+   options: [
+      "COBOL",
+      "BASIC",
+      "FORTRAN",
+      "PASCAL"
+    ],
+    answer: "FORTRAN",
+    explanation: "توضح الصفحة الرابعة (Image 4) في قسم أمثلة لغات البرمجة العالية المستوى أن لغة FORTRAN تم تطويرها بواسطة IBM عام 1954 للأغراض العلمية والهندسية."
     },
-    {
-        question: "2. A machine that creates the printing plates is called a:",
-        options: ["Scanner", "Imagesetter", "Platesetter", "Laser printer"],
-        answer: "Platesetter",
-        explanation: "Page 105 states that the machine that generates plates for a printing press is called a \"platesetter.\""
+  {
+    question: "What are the small Java programs that run automatically on web pages called?",
+     options: [
+      "Plug-ins",
+      "Applets",
+      "Tags",
+      "Threads"
+    ],
+    answer: "Applets",
+    explanation: "تُعرف الصفحة الثالثة والسابعة الـ Applets بأنها برامج صغيرة تعمل تلقائياً داخل صفحات الويب لتوفر التفاعل والرسوم المتحركة."
+  },
+  {
+    question: "How is the '-ed' ending pronounced in the word 'watched'?",
+     options: [
+      "/t/",
+      "/d/",
+      "/ɪd/",
+      "/ed/"
+    ],
+    answer: "/t/",
+    explanation: "تنص قاعدة النطق في الصفحة الأولى على أن الـ -ed تُلفظ /t/ إذا جاءت بعد صوت ساكن غير ملفوظ (voiceless) مثل صوت /tʃ/ في نهاية watch."
+  },
+  {
+    question: "How is the '-ed' ending pronounced in the word 'designed'?",
+     options: [
+      "/t/",
+      "/d/",
+      "/ɪd/",
+      "/de/"
+    ],
+    answer: "/d/",
+    explanation: "تُلفظ الـ -ed كـ /d/ إذا جاءت بعد صوت ملفوظ (voiced sound) مثل صوت /n/ في نهاية كلمة design."
+  },
+  {
+    question: "How is the '-ed' ending pronounced in the word 'executed'?",
+     options: [
+      "/t/",
+      "/d/",
+      "/ɪd/",
+      "/id/"
+    ],
+    answer: "/ɪd/",
+    explanation: "وفقاً لجدول النطق في الصفحة الأولى، يلفظ المقطع كـ /ɪd/ عندما ينتهي الفعل الأصلي بصوت /t/ أو /d/، والفعل هنا ينتهي بصوت /t/."
+  },
+  {
+    question: "Which modal verb is used to express absolute obligation or technical necessity in: 'To view a PDF file, you __ have Adobe Acrobat Reader.'?",
+     options: [
+      "can",
+      "should",
+      "must",
+      "might"
+    ],
+    answer: "must",
+    explanation: "يُستخدم الفعل المساعد 'must' للتعبير عن الإلزام أو الضرورة القصوى (obligation or necessity) كما هو موضح في تمارين القواعد بالصفحة الثانية والسابعة."
+  },
+  {
+    question: "Complete the sentence from the text: 'Websites with graphics are more inviting, so you __ like to insert some graphics into your documents.'",
+     options: [
+      "must",
+      "needn't",
+      "should",
+      "may / might"
+    ],
+    answer: "may / might",
+    explanation: "تُستخدم الأفعال 'may' أو 'might' هنا للتعبير عن الاحتمالية النصية أو الاقتراح الخفيف (possibility) بناءً على سياق الجملة في الصفحة الثانية والسابعة."
+  },
+  {
+    question: "Complete the sentence using the correct infinitive form: 'We use symbolic languages __ instructions to the computer.'",
+     options: [
+      "communicate",
+      "communicating",
+      "to communicate",
+      "for communicate"
+    ],
+    answer: "to communicate",
+    explanation: "تُستخدم صيغة المصدر المسبوق بـ to للتعبير عن الغرض (To express purpose) كما هو مذكور في قاعدة الـ HELP box بالصفحة السادسة."
+  },
+  {
+    question: "Based on grammar rules, choose the correct form: 'BASIC was widely used in the past because it was easy __.'",
+     options: [
+      "learn",
+      "learning",
+      "to learn",
+      "for learning"
+    ],
+    answer: "to learn",
+    explanation: "تتبع الصفات (مثل easy أو difficult) دائماً بصيغة المصدر الكامل (Infinitive with to) وفق القاعدة المشروحة بالصفحة السادسة (After adjectives)."
+  },
+  {
+    question: "Complete the following sentence: 'He refuses __ the project with me.'",
+     options: [
+      "do",
+      "doing",
+      "to do",
+      "done"
+    ],
+    answer: "to do",
+    explanation: "ينتمي الفعل 'refuse' (يرفض) إلى قائمة الأفعال المحددة التي يجب أن يلحق بها مصدر بـ to مباشرة (After certain verbs) كما في تمرين الصفحة السادسة."
+  },
+  {
+    question: "Choose the correct grammatical structure for this warning: 'The engineers warned the employees not __ the cables.'",
+     options: [
+      "touch",
+      "touching",
+      "to touch",
+      "for touching"
+    ],
+    answer: "to touch",
+    explanation: "عند استخدام أفعال التوجيه والتحذير متبوعة بمفعول به مثل (warn + object)، يكون التركيب في حالة النفي هو (not + to + infinitive) طبقاً للصفحة السادسة."
     },
-    {
-        question: "3. The ability to put text around graphic objects in a variety of ways is:",
-        options: ["Kerning", "Text flow", "Formatting", "Desktop publishing"],
-        answer: "Text flow",
-        explanation: "Page 105 defines \"text flow\" as the feature that allows you to wrap text around images or graphic objects."
-    },
-    {
-        question: "4. What are \"raster graphics\" also commonly called?",
-        options: ["Vectors", "Fractals", "Bitmaps", "Wireframes"],
-        answer: "Bitmaps",
-        explanation: "Page 101 explicitly states that \"Raster graphics, or bitmaps, are stored as a collection of pixels.\""
-    },
-    {
-        question: "5. What does the acronym \"MIDI\" stand for?",
-        options: ["Multimedia Interface Digital Instrument", "Musical Instrument Digital Interface", "Musical Instruction Data Information", "Multimedia Interactive Digital Interface"],
-        answer: "Musical Instrument Digital Interface",
-        explanation: "Page 111 identifies MIDI as the \"Musical Instrument Digital Interface.\""
-    },
-    {
-        question: "6. Which software is used to develop, model, and test car designs?",
-        options: ["DTP", "GIS", "CAD", "DAW"],
-        answer: "CAD",
-        explanation: "Page 101 mentions that \"Mechanical engineers use CAD (Computer Aided Design) software to develop, model and test car designs.\""
-    },
-    {
-        question: "7. A live event broadcast over the Internet is a:",
-        options: ["Podcast", "Webcast", "Stream", "Hypertext"],
-        answer: "Webcast",
-        explanation: "Page 111 defines a \"webcast\" as the broadcast of an event over the Web."
-    },
-    {
-        question: "8. The \"sharpness\" of an image, which depends on pixel density, is called:",
-        options: ["Dimension", "Contrast", "Resolution", "Saturation"],
-        answer: "Resolution",
-        explanation: "Page 101 defines \"resolution\" as the sharpness of an image depending on the density of pixels."
-    },
-    {
-        question: "9. Which is the correct order for a software description?",
-        options: ["A desktop publishing user-friendly software", "A user-friendly desktop publishing software", "A software user-friendly desktop publishing", "A user-friendly software desktop publishing"],
-        answer: "A user-friendly desktop publishing software",
-        explanation: "According to page 106, Opinion (user-friendly) comes before Purpose (desktop publishing)."
-    },
-    {
-        question: "10. Choose the correct arrangement:",
-        options: ["A German graphic design industry", "A graphic design German industry", "A German industry graphic design", "An industry German graphic design"],
-        answer: "A German graphic design industry",
-        explanation: "Following the table on page 106, Origin/Place (German) must precede the Headword/Purpose (graphic design industry)."
-    },
-    {
-        question: "11. Which sentence follows the correct adjective order?",
-        options: ["A portable new Sony music player", "A Sony new portable music player", "A new Sony portable music player", "A portable Sony new music player"],
-        answer: "A portable new Sony music player",
-        explanation: "According to the student's handwritten notes and the table on page 106, the order is: Description (portable) + Age (new) + Origin (Sony)."
-        },
-    {
-        question: "12. \"Brand names\" (like Microsoft or Sony) are categorized as adjectives of:",
-        options: ["Opinion", "Material", "Origin/Place", "Purpose"],
-        answer: "Origin/Place",
-        explanation: "The \"Help box\" on page 106 states: \"Brand names (Microsoft, Sony, etc.) are considered adjectives of origin/place.\""
-    },
-    {
-        question: "13. In \"PCs generate graphics by performing calculations,\" the word \"performing\" is:",
-        options: ["A present participle (part of a continuous tense)", "A gerund (acting as a noun after a preposition)", "An adjective", "A main verb"],
-        answer: "A gerund (acting as a noun after a preposition)",
-        explanation: "Page 102 explains that we use gerunds after prepositions (by)."
-    },
-    {
-        question: "14. In the phrase \"an amazing fractal,\" the word \"amazing\" is:",
-        options: ["A gerund", "An adjective", "A main verb", "A preposition"],
-        answer: "An adjective",
-        explanation: "The \"Help box\" on page 102 lists \"amazing\" as an example of an -ing form used as an adjective."
-    },
-    {
-        question: "15. In \"Designing is a present participle,\" the word \"Designing\" is:",
-        options: ["An adjective", "A gerund acting as a subject", "A verb in the past tense", "A preposition"],
-        answer: "A gerund acting as a subject",
-        explanation: "Page 102 (Help Box) notes that -ing forms can act as the subject of a sentence, which is a gerund."
-    },
-    {
-        question: "16. If you _ your digital video camera, we can make a movie.",
-        options: ["brought", "bring", "will bring", "brings"],
-        answer: "bring",
-        explanation: "This is a First Conditional (real/possible situation). Page 112 states the \"if\" clause uses the Present Simple."
-    },
-    {
-        question: "17. If I could afford it, I _ a new game console.",
-        options: ["will buy", "would buy", "buy", "bought"],
-        answer: "would buy",
-        explanation: "This is a Second Conditional (hypothetical). Page 112 states the main clause uses \"would + verb.\""
-    },
-    {
-        question: "18. You won't be able to play those files if you _ the correct plug-in.",
-        options: ["don't have", "didn't have", "won't have", "doesn't have"],
-        answer: "don't have",
-        explanation: "Page 112 (Exercise  requires the Present Simple negative for the \"if\" clause in a real/possible situation."
-    },
-    {
-        question: "19. \"Unless\" in conditional sentences means:",
-        options: ["As long as", "If not", "Because", "Only if"],
-        answer: "If not",
-        explanation: "The \"Help box\" on page 112 explicitly states: \"Unless means if not.\""
-    },
-    {
-        question: "20. What is a \"service bureau\"?",
-        options: ["A shop that sells cameras", "A company that specializes in printing other people's files", "A website for downloading music", "A government department"],
-        answer: "A company that specializes in printing other people's files",
-        explanation: "Page 105 defines it as a company specializing in printing services for others."
-    },
-    {
-        question: "21. Which program is needed to view a PDF document?",
-        options: ["Adobe InDesign", "Adobe Acrobat Reader", "QuarkXPress", "Microsoft PowerPoint"],
-        answer: "Adobe Acrobat Reader",
-        explanation: "Page 105 states: \"To open a PDF file, only the Adobe Acrobat Reader (a free downloa is required.\""
-    },
-    {
-        question: "22. \"Rendering\" in computer graphics includes:",
-        options: ["Typing text", "Lighting, shading, and shadows", "Connecting to the Internet", "Buying a new monitor"],
-        answer: "Lighting, shading, and shadows",
-        explanation: "Page 101 mentions that rendering includes \"lighting and shading as well as effects that simulate shadows and reflections.\""
-    },
-    {
-        question: "23. What are \"Fractals\"?",
-        options: ["Mathematical errors", "Geometrical patterns repeated at small scales", "Names of printing plates", "Hardware components"],
-        answer: "Geometrical patterns repeated at small scales",
-        explanation: "Page 101 defines fractals as \"geometrical patterns that are repeated at small scales to generate irregular shapes.\""
-    },
-    {
-        question: "24. A \"CD ripper\" is a program that:",
-        options: ["Breaks a CD into pieces", "Extracts music tracks and saves them as MP3s", "Plays videos on the web", "Creates 3D models"],
-        answer: "Extracts music tracks and saves them as MP3s",
-        explanation: "Page 111 defines a CD ripper as a program that extracts music tracks from CDs."
-    },
-    {
-        question: "25. The Arabic translation for \"Text Flow\" as written in the notes is:",
-        options: ["معالجة الكلمات", "انسياب النص", "تباعد الحروف", "الخط"],
-        answer: "انسياب النص",
-        explanation: "The handwritten notes on page 105/106 translate \"Text flow\" to \"انسياب النص\"."
-    },
-    {
-        question: "26. The term \"صفائح الطباعة\" refers to:",
-        options: ["Printing plates", "Platesetter", "Desktop publishing", "Word processing"],
-        answer: "Printing plates",
-        explanation: "Page 106 (Exercise D, item 4) shows \"printing plates\" translated/glossed as \"صفائح الطباعة\"."
-    },
-    {
-        question: "27. The Arabic note for \"User-friendly\" (page 106) is:",
-        options: ["قديم", "سهل الاستخدام", "حديث", "معقد"],
-        answer: "سهل الاستخدام",
-        explanation: "The handwritten notes on page 106 translate \"user-friendly\" to \"سهل الاستخدام\"."
-    },
-    {
-        question: "28. \"Hardware company\" was translated in the notes as:",
-        options: ["شركة برمجيات", "شركة معدات (هاردوير)", "شركة اتصالات", "شركة تصميم"],
-        answer: "شركة معدات (هاردوير)",
-        explanation: "The handwritten note on page 106 translates \"hardware\" to \"معدات\"."
-    },
-    {
-        question: "29. The term \"Output\" in the context of DTP (page 105) translates to:",
-        options: ["مدخلات", "مخرجات", "معالجة", "تخزين"],
-        answer: "مخرجات",
-        explanation: "In technical computing context (Unit 21), \"output\" refers to \"مخرجات\"."
-    },
-    {
-        question: "30. The word \"Portable\" in \"Portable Document Format\" (PDF) means:",
-        options: ["ثابت", "محمول / سهل النقل", "غالي الثمن", "معقد"],
-        answer: "محمول / سهل النقل",
-        explanation: "Page 105 and handwritten notes indicate \"portable\" refers to \"محمول\" or \"خفيف\" (easy to move/transfer between systems)."
-    }
+  {
+    question: "Complete the sentence: 'Spyware can make your PC __ more slowly.'",
+     options: [
+      "perform",
+      "performing",
+      "to perform",
+      "performed"
+    ],
+    answer: "perform",
+    explanation: "الفعل السببي 'make' عندما يتبعه مفعول به يتطلب استخدام مصدر مجرد بدون to (bare infinitive)، والتركيب هو (make + object + bare infinitive)."
+  },
+  {
+    question: "Complete the grammatical rule derived from the text: 'Java lets you __ animated characters on web pages.'",
+     options: [
+      "watch",
+      "watching",
+      "to watch",
+      "watched"
+    ],
+    answer: "watch",
+    explanation: "الفعل 'let' يتبع بمفعول به ثم فعل مجرد تماماً (bare infinitive) بدون إضافات وبدون to، بناءً على الملاحظات المكتوبة بالصفحة السابعة والسادسة."
+  },
+  {
+    question: "Fill in the blank with the correct form: 'I'm not interested in __ that computer language.'",
+     options: [
+      "learn",
+      "learning",
+      "to learn",
+      "learned"
+    ],
+    answer: "learning",
+    explanation: "الاسم المجرور أو صيغة الفعل المنتهي بـ -ing (Gerund) هو ما يجب استخدامه مباشرة بعد حروف الجر مثل 'in' للتعبير عن الاهتمام بشيء."
+  },
+  {
+    question: "What does the abbreviation WYSIWYG stand for in web page design?",
+     options: [
+      "What You See Is What You Get",
+      "Web Yield System Inside Web Yahoo Group",
+      "Wide YouTube Style Integrated Web Graphics",
+      "Word Yahoo System In Web YouTube Guide"
+    ],
+    answer: "What You See Is What You Get",
+    explanation: "مذكور صراحة في الصفحة الثامنة (Image 8) في سطر محرري الويب أن الاختصار يعني 'What You See Is What You Get' (ما تراه هو ما تحصل عليه)."
+  },
+  {
+    question: "What is defined as 'a mechanism for adding styles to web documents, including fonts, colors, and layout'?",
+     options: [
+      "Hypertext",
+      "Cascading Style Sheets (CSS)",
+      "RSS feeds",
+      "XML tags"
+    ],
+    answer: "Cascading Style Sheets (CSS)",
+    explanation: "هذا هو التعريف التقني الدقيق لآلية صفحات الأنماط الانسيابية (CSS) كما جاء في الصفحة السابعة والثامنة."
+  },
+  {
+    question: "What is the primary function of a 'plug-in' based on the text matching exercise?",
+     options: [
+      "It is a database for storing user passwords.",
+      "It is a small program used for handling audio, video and animation files.",
+      "It translates high-level code into machine code line by line.",
+      "It allows users to define their own custom tags."
+    ],
+    answer: "It is a small program used for handling audio, video and animation files.",
+    explanation: "وفقاً للتوصيل في الصفحة السابعة (تمرين B، النقطة 4 مصلت بـ b)، الـ plug-in هو برنامج مساعد مخصص للتعامل مع ملفات الصوت والفيديو والأنيميشن."
+  },
+  {
+    question: "What does the commercial computer language abbreviation COBOL stand for?",
+     options: [
+      "Computer Business Oriented Language",
+      "Common Business Oriented Language",
+      "Complex Binary Object Language",
+      "Core Basic Output Language"
+    ],
+    answer: "Common Business Oriented Language",
+    explanation: "مذكور في تفصيل اللغات بالصفحة الرابعة (Image 4) أن اختصار لغة كوبول يعود إلى (Common Business Oriented Language) وتستخدم للتطبيقات التجارية."
+  },
+  {
+    question: "Which markup language allows developers to define their own tags and is not limited to a fixed set?",
+     options: [
+      "HTML",
+      "XML (Extensible Markup Language)",
+      "VoiceXML",
+      "FORTRAN"
+    ],
+    answer: "XML (Extensible Markup Language)",
+    explanation: "تشرح الصفحة الرابعة والسابعة أن لغة XML تمكن المبرمجين من تحديد وسومهم الخاصة (define our own tags) ولا تقتصر على مجموعة وسوم ثابتة كـ HTML."
+  },
+  {
+    question: "Complete the word-building sentence: '__ is the process of writing a program using a computer language.'",
+     options: [
+      "Program",
+      "Programmer",
+      "Programming",
+      "Programmable"
+    ],
+    answer: "Programming",
+    explanation: "حسب تمرين اشتقاق الكلمات (Word building) في الصفحة التاسعة (Image 9، الجملة الأولى)، فإن العملية نفسها كاسم مصدر هي 'Programming'."
+  },
+  {
+    question: "Complete the text statement: 'A source program is converted into machine code by software called a __.'",
+     options: [
+      "compiler",
+      "bug",
+      "debugger",
+      "compilation"
+    ],
+    answer: "compiler",
+    explanation: "البرمجية التي تحول البرنامج المصدر بالكامل إلى لغة الآلة تسمى المترجم (compiler) كما جاء في اشتقاقات وتدريبات الصفحة التاسعة والصفحة الرابعة."
+  },
+  {
+    question: "What is the technical term for 'any error or malfunction of a computer program'?",
+     options: [
+      "bug",
+      "debug",
+      "debugger",
+      "debugging"
+    ],
+    answer: "bug",
+    explanation: "تُعرف الصفحة التاسعة في التمرين الثامن الـ 'bug' (العلة/الخطأ البرمجي) بأنه أي خطأ أو خلل وظيفي يحدث داخل برنامج الكمبيوتر."
+  }
+
+
 ];
    
 
@@ -209,7 +362,7 @@ document.addEventListener("mousemove", (e) => {
         
         const x = Math.cos(angle) * distance;
         const y = Math.sin(angle) * distance;
-        pupil.style.transform =` translate(${x}px, ${y}px)`;
+        pupil.style.transform =`translate(${x}px, ${y}px)`;
     });
 });
 
